@@ -8,8 +8,8 @@ This project is a web-based system that optimizes flight roster creation, valida
 
 | Phase | Responsibility | Status | Notes |
 | :--- | :--- | :--- | :--- |
-| **Frontend (S1-S6)** | Elif T. (UI/Web Designer) | **COMPLETED** ✅ | All 6 screens (Login to Manifest) and core JavaScript logic have been integrated and unified. |
-| **Backend (API)** | Başak B.G. / Burak D. | In Progress | API Integration is pending for all data operations. |
+| **Frontend (S1-S6)** | **Elif T., Nisa Üstün** | **COMPLETED** ✅ | All 6 screens (Login to Manifest) and core JavaScript logic have been integrated and unified. |
+| **Backend (API)** | **Başak B.G., Burak D., Haki Ata, Azra Çakır** | In Progress | API Integration is pending for all data operations. |
 
 ---
 
@@ -66,4 +66,4 @@ The following software must be installed on your computer to run the system:
 ## 📝 4. Development Log (Elif T.)
 
 * **2025-12-07:** All S1-S6 Frontend screens completed and unified. **Front-end development phase finished.**
-* **Next Step:** Open Pull Request (PR) for Backend integration.
+* **Next Step:** Open Pull Request (PR) for Backend integration.tegration.
