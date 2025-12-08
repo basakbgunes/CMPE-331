@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+    <title>SkyRoster AI – Crew Edit & Approval (S5)</title>
+</head>
+<body>
+    <header>
+        <h1>Flight Roster System</h1>
+    </header>
+    
+    <main class="roster-page">
+        <h2>Extended Roster & Crew Approval (Screen S5)</h2>
+
+        <div id="flight-context-header" class="card header-context">
+             <p id="context-info">Flight: --- • Aircraft: --- • Roster Status: Draft</p>
+             <button onclick="window.location.href='roster-builder.html'">Back to Roster Dashboard</button>
+        </div>
+
+        <div class="s5-container">
+            
+            <section id="crew-editor-area" class="card">
+                <h3>Flight Crew Roster</h3>
+                <div id="crew-editor-controls">
+                    <button id="add-crew-member-btn">+ Add Crew Member (UC05)</button>
+                    <button id="re-validate-btn" disabled>Re-Validate Rules</button>
+                </div>
+                
+                <div class="crew-tables">
+                    <h4>Pilots (<span id="pilot-count">0</span>)</h4>
+                    <table id="pilot-roster-table" class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Seniority</th>
+                                <th>Cert. Type</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            </tbody>
+                    </table>
+
+                    <h4>Cabin Crew (<span id="cabin-count">0</span>)</h4>
+                    <table id="cabin-roster-table" class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Language</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <aside id="approval-aside" class="card validation-aside">
+                <h3>Validation Status</h3>
+                <div id="s5-rule-checklist">
+                    <p class="status-ok">DR-01: Pilot composition is compliant.</p>
+                    <p class="status-warning">DR-03: Cabin crew language mismatch warning.</p>
+                </div>
+
+                <div class="approval-box">
+                    <h4>Final Roster Approval (FR-06)</h4>
+                    <p id="approval-message">Status: Needs Manual Review and Approval.</p>
+                    <button id="approve-roster-btn" class="approve-btn" disabled>APPROVE ROSTER DRAFT</button>
+                    <p class="note">Approval will lock the crew list and proceed to publishing.</p>
+                </div>
+            </aside>
+            
+        </div>
+    </main>
+
+    <footer class="footer-bar">
+        <p>Copyright © 2025</p>
+    </footer>
+    <script src="index.js"></script> 
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+    <title>SkyRoster AI – Flight Search</title>
+    </head>
+<body>
+    <header>
+        <h1>Flight Roster System</h1>
+    </header>
+    
+    <main>
+        <h2>Flight Search & Selection (Screen S2)</h2>
+
+        <section id="search-area" class="card">
+            <h3>Search Flights</h3>
+            <form id="flight-search-form">
+                
+                <div class="search-bar-main">
+                    <input type="text" id="flight-number-input" placeholder="Enter Flight No or partial match (e.g., AA1243)">
+                    <button type="submit" id="search-flights-btn">Search Flights</button>
+                </div>
+                
+                <div class="filter-panel">
+                    <h4>Filter Panel</h4>
+                    <div class="filter-group">
+                        <label for="date-filter">Date/Time (Range):</label>
+                        <input type="date" id="date-filter">
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="origin-filter">Origin:</label>
+                        <input type="text" id="origin-filter" placeholder="City/Airport Code">
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="destination-filter">Destination:</label>
+                        <input type="text" id="destination-filter" placeholder="City/Airport Code">
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="aircraft-type-filter">Aircraft Type:</label>
+                        <select id="aircraft-type-filter">
+                            <option value="">All Types (Optional)</option>
+                            </select>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+        <section id="results-area" class="card">
+            <h3>Search Results</h3>
+            <p id="loading-message" style="display:none;">Loading flights (p95 ≤ 2s)...</p>
+            <table id="flight-results-table">
+                <thead>
+                    <tr>
+                        <th>Flight No</th>
+                        <th>Date/Time</th>
+                        <th>Duration</th>
+                        <th>Distance (Km)</th>
+                        <th>Origin</th>
+                        <th>Destination</th>
+                        <th>Aircraft</th>
+                        <th>Shared Flight</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+            <p id="no-results-message" style="display:none;">No flights found; adjust filters.</p>
+        </section>
+
+        <section id="context-area" class="footer-bar">
+            <p id="selected-flight-context">Selected: None</p> 
+            <button id="open-roster-btn" disabled>Open Roster (S3)</button>
+        </section>
+
+    </main>
+    
+    <footer>
+        <p>Copyright © 2025</p>
+    </footer>
+    <script src="main.js"></script> 
+</body>
+</html>
