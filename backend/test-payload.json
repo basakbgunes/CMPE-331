@@ -1,0 +1,26 @@
+{
+  "flightId": "TEST1234",
+  "seatMap": {
+    "seats": [
+      { "seatNo": "1A", "row": 1, "colIndex": 0, "cabinClass": "business" },
+      { "seatNo": "1B", "row": 1, "colIndex": 1, "cabinClass": "business" },
+      { "seatNo": "1C", "row": 1, "colIndex": 2, "cabinClass": "business" },
+      { "seatNo": "1D", "row": 1, "colIndex": 3, "cabinClass": "business" },
+
+      { "seatNo": "2A", "row": 2, "colIndex": 0, "cabinClass": "economy" },
+      { "seatNo": "2B", "row": 2, "colIndex": 1, "cabinClass": "economy" },
+      { "seatNo": "2C", "row": 2, "colIndex": 2, "cabinClass": "economy" },
+      { "seatNo": "2D", "row": 2, "colIndex": 3, "cabinClass": "economy" }
+    ]
+  },
+  "passengers": [
+    { "paxId": "P1", "name": "Alice", "age": 35, "seatType": "economy", "affiliateIds": ["P2", "P3"] },
+    { "paxId": "P2", "name": "Bob", "age": 37, "seatType": "economy", "affiliateIds": ["P1", "P3"] },
+    { "paxId": "P3", "name": "Charlie", "age": 8,  "seatType": "economy", "affiliateIds": ["P1", "P2"] },
+
+    { "paxId": "P4", "name": "Business Lady", "age": 40, "seatType": "business", "seatNo": "1A" },
+
+    { "paxId": "P5", "name": "Infant", "age": 1, "seatType": "economy", "infantParentId": "P6" },
+    { "paxId": "P6", "name": "Parent", "age": 30, "seatType": "economy", "affiliateIds": ["P5"] }
+  ]
+}
