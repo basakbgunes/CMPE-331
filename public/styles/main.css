@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   font-family: "Arial", sans-serif;
   background-color: #f4f4f4;
@@ -71,6 +72,87 @@ button {
 
 button:hover {
   background-color: rgb(33.1380753138, 125.1882845188, 186.8619246862);
+}
+
+#alert-stack {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1000;
+  max-width: 340px;
+}
+
+.alert {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  background: #fff;
+  border-left: 4px solid #3498db;
+  border-radius: 8px;
+  padding: 12px 14px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+  min-width: 260px;
+}
+.alert__icon {
+  font-size: 1.1em;
+}
+.alert__body {
+  flex: 1;
+}
+.alert__title {
+  margin: 0;
+  font-weight: bold;
+  color: #2c3e50;
+}
+.alert__message {
+  margin: 4px 0 0 0;
+  font-size: 0.95em;
+  color: #34495e;
+}
+.alert__close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  color: #7f8c8d;
+}
+.alert--success {
+  border-left-color: #2ecc71;
+}
+.alert--warning {
+  border-left-color: #f39c12;
+}
+.alert--error {
+  border-left-color: #e74c3c;
+}
+.alert--info {
+  border-left-color: #3498db;
+}
+
+.validation-banner {
+  margin-top: 10px;
+  padding: 12px 14px;
+  border-radius: 6px;
+  border-left: 4px solid #3498db;
+  background: rgb(225.2719665272, 239.9163179916, 249.7280334728);
+}
+.validation-banner.inline-banner {
+  margin-bottom: 10px;
+}
+.validation-banner--success {
+  border-color: #2ecc71;
+  background: #ecfdf3;
+}
+.validation-banner--warning {
+  border-color: #f39c12;
+  background: #fff4e5;
+}
+.validation-banner--error {
+  border-color: #e74c3c;
+  background: rgb(253.3561643836, 242.7397260274, 241.6438356164);
 }
 
 /* --- SCREEN S2: FLIGHT SEARCH STYLES START --- */
@@ -278,5 +360,256 @@ button:hover {
 }
 
 /* --- SCREEN S3: ROSTER BUILDER STYLES END --- */
+/* --- SCREEN S4: SEAT ASSIGNMENT STYLES START --- */
+.seat-assignment-container {
+  display: grid;
+  grid-template-columns: 3fr 1fr; /* Harita geniş, Yolcu listesi dar */
+  gap: 20px;
+  margin-top: 20px;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+#seat-map-area {
+  min-height: 500px;
+}
+#seat-map-area #seat-map-controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+#seat-map-area #seat-map-controls #capacity-status {
+  margin-left: auto;
+  font-weight: bold;
+  color: #34495e;
+}
+
+#plane-view-canvas {
+  padding: 20px;
+  background-color: #ecf0f1;
+  border-radius: 5px;
+  text-align: center;
+  min-height: 400px;
+}
+
+.seat-grid-layout {
+  display: grid;
+  /* Örnek layout: 6 sütun (A B C [Koridor] D E F) */
+  grid-template-columns: repeat(3, 1fr) 0.5fr repeat(3, 1fr);
+  gap: 5px 10px;
+  padding: 10px;
+  border: 1px solid #bdc3c7;
+  background: #fff;
+}
+
+.seat-item {
+  padding: 5px;
+  background-color: #3498db; /* Mavi - Boş Koltuk */
+  color: white;
+  font-size: 0.8em;
+  border-radius: 3px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.2s;
+  user-select: none;
+}
+.seat-item.occupied {
+  background-color: #2ecc71; /* Yeşil - Dolu Koltuk */
+  cursor: default;
+}
+.seat-item.premium {
+  background-color: #e67e22; /* Turuncu - Premium Koltuk */
+}
+.seat-item.selected-swap {
+  border: 3px solid #e74c3c; /* Kırmızı - Swap için seçili */
+}
+.seat-item.aisle {
+  /* Koridor koltukları (varsa) veya boşluk */
+  background: transparent;
+  cursor: default;
+  padding: 0;
+}
+
+#unassigned-drawer {
+  overflow-y: auto;
+  max-height: 500px;
+}
+#unassigned-drawer h3 {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+}
+#unassigned-drawer h3 span {
+  color: #e67e22;
+}
+#unassigned-drawer #unassigned-list {
+  list-style: none;
+  padding: 0;
+}
+#unassigned-drawer #unassigned-list li {
+  background-color: #ecf0f1;
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  cursor: grab;
+  border-left: 5px solid #34495e;
+}
+#unassigned-drawer #unassigned-list li[data-class=First] {
+  border-left-color: #e74c3c;
+}
+#unassigned-drawer #unassigned-list li[data-class=Business] {
+  border-left-color: #f1c40f;
+}
+
+/* Footer Actions */
+#assignment-actions-footer .footer-bar {
+  padding: 15px 50px;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* --- SCREEN S4: SEAT ASSIGNMENT STYLES END --- */
+/* --- SCREEN S5: EXTENDED ROSTER STYLES START --- */
+.s5-container {
+  display: grid;
+  grid-template-columns: 3fr 1fr; /* Editör geniş, Onay dar */
+  gap: 20px;
+  margin-top: 20px;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+#crew-editor-area h4 {
+  margin-top: 20px;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 5px;
+  color: #34495e;
+}
+
+#crew-editor-controls {
+  margin-bottom: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+/* Tablo Stilleri (Tüm sayfalar için kullandığınız stil olmalı) */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+.data-table th, .data-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+.data-table th {
+  background-color: #f2f2f2;
+}
+.data-table {
+  /* Action butonu */
+}
+.data-table .action-btn {
+  padding: 5px 10px;
+  background-color: #e74c3c; /* Kırmızı - Silme */
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+/* Approval Aside Stilleri */
+.validation-aside {
+  padding: 20px;
+}
+.validation-aside #s5-rule-checklist {
+  min-height: 200px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+.validation-aside .approval-box {
+  border-top: 2px dashed #bdc3c7;
+  padding-top: 15px;
+  text-align: center;
+}
+.validation-aside .approval-box #approval-message {
+  font-weight: bold;
+  margin: 10px 0;
+  color: #2c3e50;
+}
+.validation-aside .approve-btn {
+  background-color: #2ecc71; /* Yeşil - Onay */
+  color: white;
+  padding: 10px 20px;
+  font-size: 1.1em;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+.validation-aside .approve-btn:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+.validation-aside .note {
+  font-size: 0.8em;
+  color: #7f8c8d;
+  margin-top: 5px;
+}
+
+/* --- SCREEN S5: EXTENDED ROSTER STYLES END --- */
+/* --- SCREEN S6: FINAL MANIFEST STYLES START --- */
+.s6-container {
+  max-width: 1000px;
+  margin: 20px auto;
+}
+
+#manifest-summary {
+  margin-bottom: 20px;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  margin-bottom: 20px;
+  font-size: 0.95em;
+}
+.summary-grid strong {
+  color: #2c3e50;
+}
+
+.crew-header {
+  margin-top: 15px;
+  padding-bottom: 5px;
+  border-bottom: 1px dashed #ccc;
+  color: #16a085; /* Yeşilimsi ton */
+}
+
+.crew-manifest-list {
+  list-style: disc;
+  margin-left: 25px;
+  padding: 5px 0;
+}
+
+#passenger-manifest {
+  margin-top: 20px;
+}
+#passenger-manifest .manifest-controls {
+  margin-bottom: 15px;
+  display: flex;
+  gap: 10px;
+}
+#passenger-manifest .data-table th:first-child, #passenger-manifest .data-table td:first-child {
+  width: 10%; /* Koltuk numarası sütununu dar tut */
+  font-weight: bold;
+}
+
+/* --- SCREEN S6: FINAL MANIFEST STYLES END --- */
 
 /*# sourceMappingURL=main.css.map */

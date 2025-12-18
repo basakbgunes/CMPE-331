@@ -80,6 +80,67 @@ button:hover {
     background-color: darken($primary-color, 10%);
 }
 
+// Global alert stack (validation / warning mechanism)
+#alert-stack {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 1000;
+    max-width: 340px;
+}
+
+.alert {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    background: #fff;
+    border-left: 4px solid $primary-color;
+    border-radius: 8px;
+    padding: 12px 14px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+    min-width: 260px;
+
+    &__icon { font-size: 1.1em; }
+    &__body { flex: 1; }
+    &__title {
+        margin: 0;
+        font-weight: bold;
+        color: #2c3e50;
+    }
+    &__message {
+        margin: 4px 0 0 0;
+        font-size: 0.95em;
+        color: #34495e;
+    }
+    &__close {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1em;
+        color: #7f8c8d;
+    }
+
+    &--success { border-left-color: #2ecc71; }
+    &--warning { border-left-color: #f39c12; }
+    &--error { border-left-color: $error-color; }
+    &--info { border-left-color: $primary-color; }
+}
+
+.validation-banner {
+    margin-top: 10px;
+    padding: 12px 14px;
+    border-radius: 6px;
+    border-left: 4px solid $primary-color;
+    background: lighten($primary-color, 40%);
+    &.inline-banner { margin-bottom: 10px; }
+    &--success { border-color: #2ecc71; background: #ecfdf3; }
+    &--warning { border-color: #f39c12; background: #fff4e5; }
+    &--error { border-color: $error-color; background: lighten($error-color, 40%); }
+}
+
 /* --- SCREEN S2: FLIGHT SEARCH STYLES START --- */
 
 // Genel Kart Stili (Search Area ve Results Area için)
