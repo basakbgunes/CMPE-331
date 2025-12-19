@@ -15,8 +15,19 @@
         <h2>Final Roster Manifest (Screen S6)</h2>
 
         <div id="flight-context-header" class="card header-context">
-             <p id="context-info">Flight: --- • Aircraft: --- • Roster Status: APPROVED</p>
-             <button onclick="window.location.href='roster-builder.html'">Back to Roster Dashboard</button>
+            <p id="context-info">
+                Flight: --- • Aircraft: --- • Roster Status: APPROVED
+            </p>
+
+            <div class="header-buttons">
+                <button onclick="window.location.href='roster-builder.html'">
+                    Back to Roster Dashboard
+                </button>
+
+                <button onclick="window.location.href='flightsearch.html'">
+                    Return to Flight Search (S2)
+                </button>
+            </div>
         </div>
 
         <div class="s6-container">
@@ -33,15 +44,16 @@
 
                 <h4 class="crew-header">Flight Crew (Cockpit)</h4>
                 <ul id="pilot-manifest-list" class="crew-manifest-list">
-                    </ul>
+                </ul>
                 
                 <h4 class="crew-header">Cabin Crew (Attendants)</h4>
                 <ul id="cabin-manifest-list" class="crew-manifest-list">
-                    </ul>
+                </ul>
             </section>
 
             <section id="passenger-manifest" class="card">
                 <h3>Passenger Manifest (UC06)</h3>
+
                 <div class="manifest-controls">
                     <button id="print-manifest-btn">Print Manifest (PDF)</button>
                     <button id="download-manifest-btn">Download Manifest (CSV)</button>
@@ -57,15 +69,17 @@
                         </tr>
                     </thead>
                     <tbody>
-                        </tbody>
+                    </tbody>
                 </table>
             </section>
+
         </div>
     </main>
 
     <footer class="footer-bar">
         <p>Copyright © 2025</p>
     </footer>
+
     <script src="index.js"></script> 
 </body>
 </html>
