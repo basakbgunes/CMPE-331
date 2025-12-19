@@ -16,7 +16,9 @@
 
         <div id="flight-context-header" class="card header-context">
              <p id="context-info">Flight: --- • Aircraft: --- • Roster Status: Draft</p>
-             <button onclick="window.location.href='roster-builder.html'">Back to Roster Dashboard</button>
+             <button onclick="window.location.href='roster-builder.html'">
+                 Back to Roster Dashboard
+             </button>
         </div>
 
         <div class="seat-assignment-container">
@@ -32,14 +34,14 @@
                 <div id="plane-view-canvas">
                     <p>Seat Map will be rendered here based on Aircraft Type.</p>
                     <div id="seat-grid" class="seat-grid-layout">
-                        </div>
+                    </div>
                 </div>
             </section>
 
             <aside id="unassigned-drawer" class="card">
                 <h3>Unassigned Passengers (<span id="unassigned-count">0</span>)</h3>
                 <ul id="unassigned-list">
-                    </ul>
+                </ul>
             </aside>
             
         </div>
@@ -47,13 +49,15 @@
     </main>
     
     <footer id="assignment-actions-footer" class="footer-bar">
-        <button id="save-assignment-btn" disabled>Save Seat Assignments (Go to S3)</button>
-        <button id="print-manifest-btn">Print Manifest (UC06)</button>
+        <button id="save-assignment-btn" disabled>
+            Save Seat Assignments (Go to S3)
+        </button>
     </footer>
 
     <footer>
         <p>Copyright © 2025</p>
     </footer>
+
     <script src="index.js"></script> 
 </body>
 </html>
