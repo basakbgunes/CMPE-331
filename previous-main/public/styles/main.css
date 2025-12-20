@@ -1,0 +1,282 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+header {
+  background-color: #3498db;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+}
+
+form {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  max-width: 350px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form div {
+  margin-bottom: 15px;
+}
+
+form label {
+  margin-bottom: 5px;
+  display: block;
+  font-weight: bold;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+#error-message {
+  color: #e74c3c;
+  background-color: rgb(253.3561643836, 242.7397260274, 241.6438356164);
+  border: 1px solid #e74c3c;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  font-weight: 500;
+  text-align: center;
+}
+
+button {
+  padding: 10px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: rgb(33.1380753138, 125.1882845188, 186.8619246862);
+}
+
+/* --- SCREEN S2: FLIGHT SEARCH STYLES START --- */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+}
+
+#search-area h3 {
+  margin-top: 0;
+  color: #34495e;
+}
+
+.search-bar-main {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.search-bar-main #flight-number-input {
+  flex-grow: 1;
+  font-size: 16px;
+}
+.search-bar-main #search-flights-btn {
+  padding: 10px 20px;
+  white-space: nowrap;
+}
+
+.filter-panel {
+  border-top: 1px solid #ecf0f1;
+  padding-top: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+.filter-panel h4 {
+  grid-column: 1/-1;
+  margin-top: 0;
+  font-size: 1em;
+  color: #7f8c8d;
+}
+.filter-panel .filter-group {
+  display: flex;
+  flex-direction: column;
+}
+.filter-panel .filter-group label {
+  font-size: 0.9em;
+  margin-bottom: 5px;
+}
+.filter-panel .filter-group input[type=date],
+.filter-panel .filter-group input[type=text],
+.filter-panel .filter-group select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#flight-results-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+#flight-results-table th, #flight-results-table td {
+  border: 1px solid #ecf0f1;
+  padding: 12px;
+  text-align: left;
+}
+#flight-results-table th {
+  background-color: #f8f9fa;
+  font-weight: bold;
+  color: #333;
+}
+#flight-results-table tbody tr {
+  cursor: pointer;
+}
+#flight-results-table tbody tr:hover {
+  background-color: #eaf2f8;
+}
+#flight-results-table tbody tr.selected {
+  background-color: #d6e9f9;
+  font-weight: 500;
+}
+
+#context-area {
+  max-width: 1200px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #34495e;
+  color: white;
+  border-radius: 8px;
+}
+#context-area #open-roster-btn {
+  background-color: #2ecc71;
+}
+#context-area #open-roster-btn:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+#context-area #selected-flight-context {
+  font-weight: bold;
+}
+
+/* --- SCREEN S2: FLIGHT SEARCH STYLES END --- */
+/* --- SCREEN S3: ROSTER BUILDER STYLES START --- */
+.roster-page {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-context {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-context h2 {
+  margin: 0;
+}
+
+.roster-container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+#validation-sidebar {
+  background-color: #ecf0f1;
+  padding: 15px;
+  border-radius: 8px;
+}
+#validation-sidebar h3 {
+  color: #3498db;
+  margin-top: 0;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 5px;
+}
+#validation-sidebar .status-ok {
+  color: #27ae60;
+  font-weight: bold;
+}
+#validation-sidebar .status-warning {
+  color: #f39c12;
+}
+#validation-sidebar .status-error {
+  color: #e74c3c;
+  font-weight: bold;
+}
+#validation-sidebar p {
+  margin: 8px 0;
+  padding-left: 10px;
+  border-left: 3px solid #ccc;
+}
+
+#generate-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#roster-summary h3 {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+#roster-summary h4 {
+  margin-top: 20px;
+  color: #34495e;
+}
+#roster-summary h4 span {
+  color: #3498db;
+  font-size: 1.2em;
+  margin-left: 5px;
+}
+#roster-summary ul {
+  list-style: none;
+  padding: 0;
+}
+#roster-summary ul li {
+  padding: 5px 0;
+  border-bottom: 1px dotted #eee;
+}
+
+#roster-actions-footer {
+  padding: 15px 50px;
+  justify-content: space-around;
+}
+#roster-actions-footer button {
+  padding: 12px 25px;
+  font-weight: bold;
+}
+#roster-actions-footer #seat-assignment-btn {
+  background-color: #3498db;
+}
+#roster-actions-footer #save-export-btn {
+  background-color: #27ae60;
+}
+#roster-actions-footer #discard-draft-btn {
+  background-color: #e74c3c;
+}
+
+/* --- SCREEN S3: ROSTER BUILDER STYLES END --- */
+
+/*# sourceMappingURL=main.css.map */
